@@ -35,7 +35,22 @@ const navIcons = [
   },
 ];
 
-const dockApps = [
+type WindowKey =
+  | "finder"
+  | "safari"
+  | "photos"
+  | "contact"
+  | "terminal"
+  | "trash";
+
+type DockApp = {
+  id: WindowKey;
+  name: string;
+  icon: string;
+  canOpen: boolean;
+};
+
+const dockApps: DockApp[] = [
   {
     id: "finder",
     name: "Portfolio", // was "Finder"
@@ -492,7 +507,20 @@ export const locations = {
 
 const INITIAL_Z_INDEX = 1000;
 
-const WINDOW_CONFIG = {
+type WindowConfigKey = Exclude<
+  WindowKey | "resume" | "txtfile" | "imgfile",
+  "trash"
+>;
+
+type Window = {
+  isOpen: boolean;
+  zIndex: number;
+  data: unknown;
+};
+
+type Windows = Record<WindowConfigKey, Window>;
+
+const WINDOW_CONFIG: Windows = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -503,4 +531,11 @@ const WINDOW_CONFIG = {
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };
 
-export { INITIAL_Z_INDEX, WINDOW_CONFIG };
+export {
+  INITIAL_Z_INDEX,
+  WINDOW_CONFIG,
+  type WindowConfigKey,
+  type Window,
+  type DockApp,
+  type Windows,
+};
