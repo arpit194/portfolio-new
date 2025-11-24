@@ -73,7 +73,7 @@ const dockApps: DockApp[] = [
     id: "photos",
     name: "Gallery",
     icon: "photos.png",
-    canOpen: true,
+    canOpen: false,
   },
   {
     id: "contact",
