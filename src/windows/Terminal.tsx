@@ -39,8 +39,8 @@ const Terminal = () => {
           <p>
             <Check size={20} /> 5 of 5 stack loaded successfully (100%)
           </p>
-          <p className="text-black">
-            <Flag size={15} fill="black" />
+          <p className="text-gray-950 dark:text-gray-50">
+            <Flag size={15} className="flag" />
             Render time: 6ms
           </p>
         </div>

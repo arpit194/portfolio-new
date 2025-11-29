@@ -9,13 +9,14 @@ const Text = () => {
   if (!data) return null;
 
   const { name, image, subtitle, description } = data;
+
   return (
     <>
       <div id="window-header">
         <WindowControls target="txtfile" />
         <h2>{name}</h2>
       </div>
-      <div className="p-5 space-y-6 bg-white">
+      <div className="p-5 space-y-6 bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-100">
         {image ? (
           <div className="w-full">
             <img src={image} alt={name} className="w-full h-auto rounded" />
@@ -27,7 +28,7 @@ const Text = () => {
         ) : null}
 
         {Array.isArray(description) ? (
-          <div className="space-y-3 leading-relaxed text-base text-gray-800">
+          <div className="space-y-3 leading-relaxed text-base text-gray-800 dark:text-gray-300">
             {description.map((para, idx) => (
               <p key={idx}>{para}</p>
             ))}

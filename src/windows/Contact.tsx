@@ -12,7 +12,7 @@ const Contact = () => {
       </div>
       <div className="p-5 space-y-5">
         <img
-          src="images/adrian.jpg"
+          src="images/arpit.jpeg"
           alt="Arpit"
           className="w-20 rounded-full"
         />
@@ -28,8 +28,8 @@ const Contact = () => {
           />
         </div>
         <ul>
-          {socials.map(({ id, bg, link, icon, text }) => (
-            <li key={id} style={{ backgroundColor: bg }}>
+          {socials.map(({ id, className, link, icon, text }) => (
+            <li key={id} className={className}>
               <a
                 href={link}
                 target="_blank"
